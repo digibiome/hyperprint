@@ -1,0 +1,32 @@
+<svg width="101" height="65" viewBox="0 0 101 65" fill="none" xmlns="http://www.w3.org/2000/svg">
+<g id="hero" clip-path="url(#clip0_2231_7918)">
+<g id="Group 46">
+<g id="Frame 86">
+<g id="Group 16">
+<g id="Group 32">
+<g id="Group 30">
+<path id="Vector" d="M99.932 23.8898L58.8597 0.176758L4.09674 31.7942L45.169 55.5072L99.932 23.8898Z" fill="#FFFAEB" stroke="#372005" stroke-width="0.5" stroke-linejoin="round"/>
+<path id="Vector_2" d="M72.5504 8.08112L99.9319 23.8898C96.3009 25.9862 91.3762 27.1639 86.2412 27.1639C83.6985 27.1639 81.1808 26.8748 78.8318 26.313C76.4827 25.7512 74.3483 24.9278 72.5504 23.8898C68.9194 21.7935 66.8795 18.9502 66.8795 15.9855C66.8795 13.0208 68.9194 10.1775 72.5504 8.08112Z" fill="#64C7C8" stroke="#372005" stroke-width="0.5" stroke-linejoin="round"/>
+<path id="Vector_3" d="M72.5505 23.8898C76.1815 25.9862 78.2214 28.8295 78.2214 31.7942C78.2214 34.7589 76.1815 37.6022 72.5505 39.6985L45.169 23.8898C48.8 21.7935 53.7247 20.6157 58.8597 20.6157C63.9948 20.6157 68.9195 21.7935 72.5505 23.8898Z" fill="#2A00FD" stroke="#372005" stroke-width="0.5" stroke-linejoin="round"/>
+<path id="Vector_4" d="M45.169 23.8898L31.4783 15.9855L4.09677 31.7942L17.7875 39.6985L45.169 23.8898Z" fill="#FF6869" stroke="#372005" stroke-width="0.5" stroke-linejoin="round"/>
+<path id="Vector_5" d="M72.5505 39.6985L45.169 55.5072C41.538 53.4109 39.4981 50.5676 39.4981 47.6029C39.4981 44.6382 41.538 41.7949 45.169 39.6985C48.8 37.6021 53.7247 36.4244 58.8597 36.4244C63.9948 36.4244 68.9195 37.6021 72.5505 39.6985Z" fill="#FFA000" stroke="#372005" stroke-width="0.5" stroke-linejoin="round"/>
+<rect id="Rectangle 10" width="1.18198" height="47.4261" transform="matrix(0.866025 -0.5 0.866025 0.5 3.07312 32.3852)" fill="#A0A0A0" stroke="#372005" stroke-width="0.5" stroke-linejoin="round"/>
+<rect id="Rectangle 11" width="3.19499" height="47.4261" transform="matrix(0.866025 -0.5 0.866025 0.5 0.306152 33.9827)" fill="#FFFAEB" stroke="#372005" stroke-width="0.5" stroke-linejoin="round"/>
+</g>
+<rect id="Rectangle 12" width="47.4261" height="6.32349" transform="matrix(0.866025 0.5 -2.20305e-08 1 0.31543 33.9844)" fill="#FFFAEB" stroke="#372005" stroke-width="0.5" stroke-linejoin="round"/>
+<g id="Group 31">
+<rect id="Rectangle 13" width="6.32349" height="67.6118" transform="matrix(-5.98857e-08 -1 0.866025 -0.5 41.3876 64.0209)" fill="#FFFAEB" stroke="#372005" stroke-width="0.5" stroke-linejoin="round"/>
+<rect id="Rectangle 14" width="3.8003" height="66.1995" transform="matrix(-5.98857e-08 -1 0.866025 -0.5 42.6107 62.0532)" fill="#FBFAF9" stroke="#372005" stroke-width="0.5" stroke-linejoin="round"/>
+<line id="Line 15" y1="-0.25" x2="66.1995" y2="-0.25" transform="matrix(0.866025 -0.5 -5.36798e-08 1 42.6107 60.2887)" stroke="#372005" stroke-width="0.5" stroke-linejoin="round"/>
+</g>
+</g>
+</g>
+</g>
+</g>
+</g>
+<defs>
+<clipPath id="clip0_2231_7918">
+<rect width="1366" height="1123" fill="white" transform="translate(-629.5 -782.264)"/>
+</clipPath>
+</defs>
+</svg>

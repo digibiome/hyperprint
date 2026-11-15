@@ -1,0 +1,31 @@
+<svg width="103" height="64" viewBox="0 0 103 64" fill="none" xmlns="http://www.w3.org/2000/svg">
+<g id="hero" clip-path="url(#clip0_2231_7918)">
+<g id="Group 46">
+<g id="Frame 86">
+<g id="Group 15">
+<g id="Group 36">
+<g id="Group 34">
+<path id="Vector" d="M45.4563 0.176767L3.24695 24.5463L59.526 57.0391L101.735 32.6695L45.4563 0.176767Z" fill="#FFFAEB" stroke="#372005" stroke-width="0.5" stroke-linejoin="round"/>
+<path id="Vector_2" d="M45.5969 24.6275L24.4923 36.8123C18.895 33.5807 15.7504 29.1977 15.7504 24.6275C15.7504 22.3646 16.5224 20.1238 18.0224 18.0332C19.5223 15.9425 21.7208 14.0429 24.4923 12.4428L45.5969 24.6275Z" fill="#FFA000" stroke="#372005" stroke-width="0.5" stroke-linejoin="round"/>
+<path id="Vector_3" d="M45.5969 24.6275L24.4923 12.4428C30.0896 9.21115 37.6811 7.39565 45.5969 7.39565C49.5164 7.39565 53.3975 7.84137 57.0187 8.70736C60.6398 9.57334 63.9301 10.8426 66.7016 12.4428L45.5969 24.6275Z" fill="#2A00FD" stroke="#372005" stroke-width="0.5" stroke-linejoin="round"/>
+<path id="Vector_4" d="M66.7016 12.4428L87.8062 24.6275L66.7016 36.8123L66.7016 12.4428Z" fill="#64C7C8" stroke="#372005" stroke-width="0.5" stroke-linejoin="round"/>
+<path id="Vector_5" d="M35.0446 30.7199C37.8433 29.1041 41.6391 28.1964 45.597 28.1964C49.5549 28.1964 53.3506 29.1041 56.1493 30.7199L80.6307 44.8543L59.526 57.039L35.0446 42.9047C32.246 41.2889 30.6737 39.0974 30.6737 36.8123C30.6737 34.5272 32.246 32.3357 35.0446 30.7199Z" fill="#FF6869" stroke="#372005" stroke-width="0.5" stroke-linejoin="round"/>
+<path id="Vector_6" d="M66.7017 36.8123L80.6307 44.8542L66.7017 52.8962L66.7017 36.8123Z" fill="#64C7C8" stroke="#372005" stroke-width="0.5" stroke-linejoin="round"/>
+<rect id="Rectangle 15" width="3.24927" height="64.9855" transform="matrix(0.866025 -0.5 0.866025 0.5 0.432983 26.171)" fill="#FFFAEB" stroke="#372005" stroke-width="0.5"/>
+</g>
+<rect id="Rectangle 16" width="64.9855" height="4.87391" transform="matrix(0.866025 0.5 -2.20305e-08 1 0.432983 26.171)" fill="#FF6869" stroke="#372005" stroke-width="0.5"/>
+<g id="Group 35">
+<rect id="Rectangle 17" width="51.9884" height="4.87391" transform="matrix(0.866025 -0.5 2.20305e-08 1 56.712 58.6637)" fill="#FFFAEB" stroke="#372005" stroke-width="0.5"/>
+<line id="Line 16" y1="-0.25" x2="51.9884" y2="-0.25" transform="matrix(-0.866025 0.5 -2.20305e-08 -1 101.735 35.1064)" stroke="#372005" stroke-width="0.5"/>
+</g>
+</g>
+</g>
+</g>
+</g>
+</g>
+<defs>
+<clipPath id="clip0_2231_7918">
+<rect width="1366" height="1123" fill="white" transform="translate(-718.624 -935.245)"/>
+</clipPath>
+</defs>
+</svg>
