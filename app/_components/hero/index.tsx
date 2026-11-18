@@ -1,51 +1,44 @@
-import Decorations from "./decorations";
-import FooterBar from "./footer-bar";
-import Header from "./header";
+import Image from "next/image";
+import Footer from "./footer";
 import Honeycomb from "./honeycomb";
-import SearchBar from "./search-bar";
-import Svg from "./svg";
+import Search from "./search";
 
 export default function Hero() {
   return (
-    <section className="relative isolate grid min-h-svh grid-rows-[auto_1fr_auto] overflow-clip bg-surface-175 text-surface-500 md:bg-surface-200">
-      <Decorations />
-      <Header />
-
-      <div className="relative z-10 grid content-start justify-items-center px-6">
-        <Svg name="bolts" width={136.988} height={34.1373} className="h-[39px] w-auto md:h-[34px]" />
-
-        <h1 className="mt-[19px] bg-surface-175 p-px text-center text-[clamp(30px,8.9vw,38.4px)] leading-[1.1] font-bold tracking-[0.05em] uppercase md:mt-[18px] md:text-[42px] md:leading-none md:tracking-[0.07em]">
+    <section
+      id="hero"
+      className="grid min-h-svh grid-cols-[0_minmax(0,1fr)_0] gap-x-6 grid-rows-[auto_auto_auto_1fr_auto] justify-items-center overflow-clip text-surface-500 children:col-start-2"
+    >
+      <h1 className="text-center text-[clamp(30px,8.9vw,38.4px)] leading-[1.1] font-bold tracking-[0.05em] uppercase md:text-[42px] md:leading-none md:tracking-[0.07em]">
+        <Image
+          src="/hero/bolts.svg"
+          alt=""
+          width={136.988}
+          height={34.1373}
+          className="mx-auto mb-[19px] block h-[39px] w-auto md:mb-[18px] md:h-[34px]"
+        />
+        <span className="bg-surface-175 box-decoration-clone p-px">
           Instant <br className="md:hidden" />
           print quote
-        </h1>
+        </span>
+      </h1>
 
-        <SearchBar variant="inline" className="mt-3.5 hidden md:grid" />
+      <Search className="mt-3.5" />
 
-        <p className="mt-2.5 bg-surface-175 px-2.5 text-center text-[clamp(17px,5vw,21.6px)] leading-none tracking-[0.03em] text-surface-450 md:mt-6 md:text-base md:text-surface-500">
-          <span className="md:hidden">Choose</span>
-          <span className="hidden md:inline">or choose</span> one product to start
-        </p>
-
-        <Svg
-          name="arrow-down"
+      <p className="mt-2.5 text-center text-[clamp(17px,5vw,21.6px)] leading-none tracking-[0.03em] text-surface-450 md:mt-6 md:text-base md:text-surface-500">
+        <span className="bg-surface-175 box-decoration-clone px-2.5">or choose one product to start</span>
+        <Image
+          src="/hero/arrow-down.svg"
+          alt=""
           width={24}
           height={24}
-          className="mt-[23px] size-[29px] md:mt-2 md:size-6"
+          className="mx-auto mt-[23px] block size-[29px] md:mt-2 md:size-6"
         />
+      </p>
 
-        <Honeycomb />
-      </div>
+      <Honeycomb />
 
-      <div className="pointer-events-none sticky bottom-0 z-30">
-        {/* Mobile: search docks above the footer, fading the comb out behind it. */}
-        <div className="grid justify-items-center bg-linear-to-b from-surface-175/0 to-surface-175 to-45% px-[19px] pt-12 pb-6 md:hidden">
-          <SearchBar variant="dock" className="pointer-events-auto grid" />
-        </div>
-        <div className="mx-auto hidden h-[60px] max-w-screen-xl bg-linear-to-b from-surface-175/0 to-surface-175 to-52% md:block" />
-        <div className="pointer-events-auto">
-          <FooterBar />
-        </div>
-      </div>
+      <Footer className="sticky bottom-0 z-30 col-span-full justify-self-stretch" />
     </section>
   );
 }

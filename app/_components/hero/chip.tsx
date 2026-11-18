@@ -1,17 +1,15 @@
 import Image from "next/image";
 
-export type Tone = "accent" | "white" | "surface";
+export type Tone = "accent" | "white";
 
 const TONE_BG: Record<Tone, string> = {
   accent: "bg-accent",
   white: "bg-white",
-  surface: "bg-surface-150",
 };
 
 const NOTCH: Record<Tone, string> = {
   accent: "/hero/chip-notch-accent.svg",
   white: "/hero/chip-notch-white.svg",
-  surface: "/hero/chip-notch-surface.svg",
 };
 
 /** The ticket-stub end cap: a thin strip with a half-round notch in the middle. */
