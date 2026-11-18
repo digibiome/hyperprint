@@ -1,28 +1,9 @@
 import Image from "next/image";
 
-/** Decorative SVG from /public/hero. */
+/** Decorative SVG from /public/hero. Extra props pass through to the image. */
 export default function Svg({
   name,
-  width,
-  height,
-  className,
-  style,
-}: {
-  name: string;
-  width: number;
-  height: number;
-  className?: string;
-  style?: React.CSSProperties;
-}) {
-  return (
-    <Image
-      src={`/hero/${name}.svg`}
-      alt=""
-      width={width}
-      height={height}
-      unoptimized
-      className={className}
-      style={style}
-    />
-  );
+  ...props
+}: { name: string } & Omit<React.ComponentProps<typeof Image>, "src" | "alt">) {
+  return <Image src={`/hero/${name}.svg`} alt="" unoptimized {...props} />;
 }

@@ -23,6 +23,23 @@
   --shadow-tile: 0 3px 2px rgb(55 32 5 / 0.25);
 }
 
+@theme {
+  /* Hero aura: one turn every 3 minutes. Uses `rotate` so it composes with translate/scale. */
+  --animate-aura: aura-spin 180s linear infinite;
+
+  /*
+   * Hero paper knocked by the cursor, per transitioned property (translate, transform, opacity):
+   * parallax stays smooth, the fly-off starts slow so it fades on screen, the fade is even.
+   */
+  --ease-paper-hit: var(--ease-out), cubic-bezier(0.55, 0, 0.85, 0.35), linear;
+
+  @keyframes aura-spin {
+    to {
+      rotate: 360deg;
+    }
+  }
+}
+
 body {
   background: var(--color-surface-175);
   color: var(--color-surface-500);
