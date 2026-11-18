@@ -1,10 +1,7 @@
 import Image from "next/image";
 import Link from "next/link";
-import styles from "./Honeycomb.module.css";
-
-/** Design size of one cube, in px. Art positions below are measured against it. */
-const CELL_W = 173.205;
-const CELL_H = 200;
+import Cube, { CELL_H, CELL_W } from "./cube";
+import styles from "./honeycomb.module.css";
 
 type Art = {
   src: string;
@@ -71,28 +68,6 @@ const PRODUCTS: Product[] = [
 ];
 
 const pct = (value: number, of: number) => `${((value / of) * 100).toFixed(3)}%`;
-
-/** The three visible inner faces of a cube, drawn in the cube's design box. */
-function Cube() {
-  return (
-    <svg
-      className={styles.cube}
-      viewBox={`0 0 ${CELL_W} ${CELL_H}`}
-      preserveAspectRatio="none"
-      aria-hidden
-    >
-      <polygon className={styles.wallLeft} points="0,50 86.6025,0 86.6025,100 0,150" />
-      <polygon
-        className={styles.wallRight}
-        points="86.6025,0 173.205,50 173.205,150 86.6025,100"
-      />
-      <polygon
-        className={styles.floor}
-        points="86.6025,100 173.205,150 86.6025,200 0,150"
-      />
-    </svg>
-  );
-}
 
 export default function Honeycomb() {
   return (
