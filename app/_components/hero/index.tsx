@@ -33,9 +33,7 @@ export default function Hero() {
           className="mt-[23px] size-[29px] md:mt-2 md:size-6"
         />
 
-        <div className="mt-[11px] w-full md:mt-[15px]">
-          <Honeycomb />
-        </div>
+        <Honeycomb />
       </div>
 
       <div className="pointer-events-none sticky bottom-0 z-30 mt-auto">
