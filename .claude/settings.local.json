@@ -4,7 +4,8 @@
       "Bash(npx create-next-app@latest . --typescript --tailwind --app --no-git --import-alias \"@/*\")",
       "Bash(npm install *)",
       "Bash(git add *)",
-      "Bash(git commit *)"
+      "Bash(git commit *)",
+      "Bash(git push *)"
     ]
   }
 }
