@@ -106,7 +106,7 @@ export default function Papers({ away }: { away: boolean }) {
     <div
       ref={papers}
       data-away={away || undefined}
-      className="group pointer-events-none fixed inset-0 z-40 hidden md:block"
+      className="group pointer-events-none fixed inset-0 z-50 hidden md:block"
     >
       {PAPERS.map(({ shape, width, height, style, show }) => (
         <Paper
