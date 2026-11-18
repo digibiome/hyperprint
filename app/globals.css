@@ -1,4 +1,5 @@
 @import "tailwindcss";
+@plugin "./_components/hero/honeycomb/plugin.ts";
 
 @theme inline {
   --font-sans: var(--font-ubuntu), ui-sans-serif, system-ui, sans-serif;

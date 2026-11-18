@@ -1,7 +1,7 @@
 import Image from "next/image";
 import Link from "next/link";
 import { cn } from "@/lib/cn";
-import { PRODUCTS } from "./constants";
+import { LAYOUTS, PRODUCTS } from "./constants";
 import Cube, { CELL_H, CELL_W } from "./cube";
 
 /*
@@ -10,23 +10,27 @@ import Cube, { CELL_H, CELL_W } from "./cube";
  * Layout technique after Andy Barefoot (https://codepen.io/andybarefoot/pen/PBPrex):
  * a plain CSS grid where every cube spans two columns, and the first cube of
  * each "short" row is pushed one column to the right, which staggers the rows
- * by half a cube.
+ * by half a cube. The `honeycomb` utility (./plugin.ts, built from LAYOUTS)
+ * sets the columns, --cell and that placement per breakpoint.
  *
  * Everything inside a cube is sized from --cell (one cube's width), so labels
  * and illustrations scale with the grid. Cube colours are custom properties
- * that <Cube /> reads; the grid sets them per breakpoint and the cells
- * override them per state.
+ * that <Cube /> reads; the grid sets the defaults and the cells override them
+ * per state.
  */
 
 export default function Honeycomb() {
   return (
-    <nav aria-label="Products" className="mx-auto w-full max-w-[693px] @container">
+    <nav
+      aria-label="Products"
+      className="mx-auto w-full @container"
+      // At most one full row of the widest layout at design size, so the art never upscales.
+      style={{ maxWidth: CELL_W * (LAYOUTS.at(-1)!.columns / 2) }}
+    >
       <ul
         className={cn(
-          // Grid: 6 columns, 8 from 560px. A cube spans 2 columns, so --cell
-          // (one cube's width) is a third or a quarter of the container.
-          "grid grid-cols-6 [--cell:calc(100cqw/3)]",
-          "@min-[560px]:grid-cols-8 @min-[560px]:[--cell:calc(100cqw/4)]",
+          // Columns, --cell (one cube's width) and cube placement (./plugin.ts).
+          "honeycomb",
           // A cube is a pointy-top hexagon, 2/√3 × --cell tall. Rows interlock
           // at 3/4 of that height (√3/2 × --cell)…
           "auto-rows-[calc(var(--cell)*sqrt(3)/2)]",
@@ -35,32 +39,26 @@ export default function Honeycomb() {
           "pb-[calc(var(--cell)/sqrt(3)/2)]",
           // Label size scales with the cube.
           "text-[length:calc(var(--cell)*0.0931)]",
-          "@min-[560px]:text-[length:calc(var(--cell)*0.0924)]",
+          "md:text-[length:calc(var(--cell)*0.0924)]",
           // Cube colours, read by <Cube />.
-          "[--line:var(--color-accent)] [--line-width:0.6px]",
-          "[--wall-left:#f4f6f6] [--wall-right:#ededed] [--floor:#fbfaf9]",
-          "@min-[560px]:[--line:var(--color-surface-250)] @min-[560px]:[--line-width:0.5px]",
-          "@min-[560px]:[--wall-right:var(--color-surface-175)]",
+          "[--line:var(--color-surface-250)] [--line-width:0.5px]",
+          "[--wall-left:#f4f6f6] [--wall-right:var(--color-surface-175)] [--floor:#fbfaf9]",
         )}
       >
         {PRODUCTS.map((product, i) => (
           <li
             key={product.slug}
             className={cn(
-              // One cube: 2 columns wide, a full hexagon tall.
-              "relative col-span-2 h-[calc(var(--cell)*2/sqrt(3))]",
+              // One cube: a full hexagon tall (its columns come from `honeycomb`).
+              "relative h-[calc(var(--cell)*2/sqrt(3))]",
               // Neighbouring rows' boxes overlap, so the box ignores the pointer;
               // the cube's faces opt back in and pass clicks up to the link.
               "pointer-events-none",
-              // Stagger: push the first cube of each short row one column right.
-              // 6 columns: rows of 2-3-2-3-2, so every 5th cube starts a short row.
-              "@max-[560px]:nth-[5n+1]:col-start-2",
-              // 8 columns: rows of 3-4-3-2, so every 7th cube starts a short row…
-              "@min-[560px]:nth-[7n+1]:col-start-2",
-              // …and when a full row would hold only the last two cubes, centre them.
-              "@min-[560px]:nth-[7n+4]:nth-last-2:col-start-3",
-              // State: brighten the floor on hover; outline the cube on keyboard focus.
-              "has-hover:[--floor:#fff]",
+              // State: on hover, raise the cube over its neighbours' shared edges,
+              // ink its lines in the accent, shade its right wall, brighten its floor…
+              "has-hover:z-1 has-hover:[--floor:#fff] has-hover:[--wall-right:#ededed]",
+              "has-hover:[--line:var(--color-accent)] has-hover:[--line-width:0.6px]",
+              // …and outline it more heavily on keyboard focus.
               "has-focus-visible:z-1 has-focus-visible:[--floor:#fff]",
               "has-focus-visible:[--line:var(--color-accent)] has-focus-visible:[--line-width:1.5px]",
               // The first two cubes use a slightly bluer floor.
