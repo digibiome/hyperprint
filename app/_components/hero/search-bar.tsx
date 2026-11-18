@@ -19,7 +19,7 @@ export default function SearchBar({
     <button
       type="submit"
       aria-label="Search"
-      className={`flex shrink-0 cursor-pointer items-center self-stretch border-y-[0.5px] border-brand-800 bg-accent ${
+      className={`grid cursor-pointer items-center border-y-[0.5px] border-brand-800 bg-accent ${
         dock ? "pr-[0.44em] pl-[0.625em]" : "pr-[9px] pl-[7px]"
       }`}
     >
@@ -36,9 +36,9 @@ export default function SearchBar({
 
   const field = (
     <span
-      className={`flex min-w-0 items-center self-stretch border-y-[0.5px] border-surface-500 ${
+      className={`grid min-w-0 items-center border-y-[0.5px] border-surface-500 ${
         dock
-          ? "flex-1 border-r-[0.5px] border-dashed bg-surface-150 pr-[0.5em] pl-[1em]"
+          ? "border-r-[0.5px] border-dashed bg-surface-150 pr-[0.5em] pl-[1em]"
           : "border-l-[0.5px] border-dashed bg-white py-2 pr-6 pl-5"
       }`}
       style={{ borderTopStyle: "solid", borderBottomStyle: "solid" }}
@@ -63,10 +63,10 @@ export default function SearchBar({
     <form
       role="search"
       action="/search"
-      className={`items-stretch focus-within:outline-2 focus-within:outline-offset-2 focus-within:outline-accent ${
+      className={`focus-within:outline-2 focus-within:outline-offset-2 focus-within:outline-accent ${
         dock
-          ? "h-[2.25em] w-full max-w-[384px] text-[clamp(15px,4.45vw,19.2px)] drop-shadow-[0_3.6px_1.2px_rgba(22,22,22,0.25)]"
-          : "text-base drop-shadow-[0_1px_1.5px_rgba(22,22,22,0.25)]"
+          ? "h-[2.25em] w-full max-w-[384px] grid-cols-[auto_minmax(0,1fr)_auto_auto] text-[clamp(15px,4.45vw,19.2px)] drop-shadow-[0_3.6px_1.2px_rgba(22,22,22,0.25)]"
+          : "grid-flow-col text-base drop-shadow-[0_1px_1.5px_rgba(22,22,22,0.25)]"
       } ${className}`}
     >
       {dock ? (

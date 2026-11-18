@@ -3,7 +3,7 @@ import Svg from "./svg";
 /** Aura rings and flying paper. Desktop only; never intercepts pointer events. */
 export default function Decorations() {
   return (
-    <div aria-hidden className="pointer-events-none hidden md:block">
+    <div aria-hidden className="pointer-events-none absolute inset-0 hidden md:block">
       <Svg
         name="aura"
         width={1627}

@@ -20,8 +20,8 @@ export default function RootLayout({
   children: React.ReactNode;
 }>) {
   return (
-    <html lang="en" className={`${ubuntu.variable} h-full antialiased`}>
-      <body className="min-h-full flex flex-col font-sans">{children}</body>
+    <html lang="en" className={`${ubuntu.variable} antialiased`}>
+      <body className="grid min-h-svh font-sans">{children}</body>
     </html>
   );
 }

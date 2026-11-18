@@ -21,10 +21,10 @@ export default function Chip({ tone, flip = false }: { tone: Tone; flip?: boolea
   return (
     <span
       aria-hidden
-      className={`flex w-[0.22em] shrink-0 flex-col self-stretch ${flip ? "-scale-x-100" : ""}`}
+      className={`grid w-[0.22em] grid-rows-[auto_1fr_auto_1fr_auto] ${flip ? "-scale-x-100" : ""}`}
     >
       <span className={`h-[0.125em] rounded-tl-[1px] border-t-[0.5px] ${edge} ${bg}`} />
-      <span className={`min-h-px flex-1 ${edge} ${bg}`} />
+      <span className={`min-h-px ${edge} ${bg}`} />
       <Image
         src={NOTCH[tone]}
         alt=""
@@ -33,7 +33,7 @@ export default function Chip({ tone, flip = false }: { tone: Tone; flip?: boolea
         unoptimized
         className="block h-[0.375em] w-full"
       />
-      <span className={`min-h-px flex-1 ${edge} ${bg}`} />
+      <span className={`min-h-px ${edge} ${bg}`} />
       <span className={`h-[0.125em] rounded-bl-[1px] border-b-[0.5px] ${edge} ${bg}`} />
     </span>
   );

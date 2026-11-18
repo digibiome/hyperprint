@@ -18,6 +18,9 @@
   /* Figma: accent/500, brand/800 */
   --color-accent: #2a00fd;
   --color-brand-800: #211303;
+
+  /* Figma: drop shadow on the header buttons */
+  --shadow-tile: 0 3px 2px rgb(55 32 5 / 0.25);
 }
 
 body {

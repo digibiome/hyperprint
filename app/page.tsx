@@ -2,7 +2,7 @@ import Hero from "./_components/hero";
 
 export default function Home() {
   return (
-    <main className="flex flex-1 flex-col">
+    <main className="grid">
       <Hero />
     </main>
   );
