@@ -43,6 +43,94 @@
   }
 }
 
+/*
+ * Ticket segment: fill, outline, rounded corners and a half-round punch on each side, all painted
+ * as background layers (no border), so the punch is truly transparent and drop-shadow follows it.
+ * Chain segments into one ticket by joining their inner sides.
+ *
+ * Inputs (all optional, inherited, so a parent can set them for every segment):
+ *   --ticket-fill, --ticket-line          colours (default white / surface-500)
+ *   --ticket-bw                           outline width (0.5px)
+ *   --ticket-radius, --ticket-radius-l/r  corner radius (1px)
+ *   --ticket-notch, --ticket-notch-l/r    punch radius (0.1875em); 0px = no punch
+ *   --ticket-edge-l/r                     side edge image: solid by default, see helpers below
+ *   --ticket-dash, --ticket-gap           dashed edge rhythm (3px / 2px)
+ */
+@utility ticket {
+  --_bw: var(--ticket-bw, 0.5px);
+  --_line: var(--ticket-line, var(--color-surface-500));
+  --_fill: var(--ticket-fill, var(--color-white));
+  --_rl: var(--ticket-radius-l, var(--ticket-radius, 1px));
+  --_rr: var(--ticket-radius-r, var(--ticket-radius, 1px));
+  --_nl: var(--ticket-notch-l, var(--ticket-notch, 0.1875em));
+  --_nr: var(--ticket-notch-r, var(--ticket-notch, 0.1875em));
+  --_el: var(--ticket-edge-l, linear-gradient(var(--_line), var(--_line)));
+  --_er: var(--ticket-edge-r, linear-gradient(var(--_line), var(--_line)));
+  /* Half-pixel ramps keep curves smooth; they collapse to 0 when a punch is off, so no stray dot. */
+  --_al: min(var(--_nl), 0.5px);
+  --_ar: min(var(--_nr), 0.5px);
+  --_bl: min(var(--_nl), var(--_bw));
+  --_br: min(var(--_nr), var(--_bw));
+
+  border-radius: var(--_rl) var(--_rr) var(--_rr) var(--_rl);
+  background-repeat: no-repeat;
+  background-image:
+    /* top + bottom edges */
+    linear-gradient(var(--_line) var(--_bw), transparent var(--_bw) calc(100% - var(--_bw)), var(--_line) 0),
+    /* side edges, above and below the punch */
+    var(--_el), var(--_el), var(--_er), var(--_er),
+    /* corner arcs (zero-size when the radius is 0) */
+    radial-gradient(circle at 100% 100%, transparent calc(var(--_rl) - var(--_bw) - 0.5px), var(--_line) calc(var(--_rl) - var(--_bw))),
+    radial-gradient(circle at 100% 0, transparent calc(var(--_rl) - var(--_bw) - 0.5px), var(--_line) calc(var(--_rl) - var(--_bw))),
+    radial-gradient(circle at 0 100%, transparent calc(var(--_rr) - var(--_bw) - 0.5px), var(--_line) calc(var(--_rr) - var(--_bw))),
+    radial-gradient(circle at 0 0, transparent calc(var(--_rr) - var(--_bw) - 0.5px), var(--_line) calc(var(--_rr) - var(--_bw))),
+    /* fill, one half per side: hole, ring, then fill */
+    radial-gradient(circle at 0 50%,
+      transparent calc(var(--_nl) - var(--_bl) - var(--_al)),
+      var(--_line) calc(var(--_nl) - var(--_bl)) var(--_nl),
+      var(--_fill) calc(var(--_nl) + var(--_al))),
+    radial-gradient(circle at 100% 50%,
+      transparent calc(var(--_nr) - var(--_br) - var(--_ar)),
+      var(--_line) calc(var(--_nr) - var(--_br)) var(--_nr),
+      var(--_fill) calc(var(--_nr) + var(--_ar)));
+  background-position:
+    0 0,
+    left top, left bottom, right top, right bottom,
+    left top, left bottom, right top, right bottom,
+    left center, right center;
+  background-size:
+    100% 100%,
+    var(--_bw) calc(50% - var(--_nl)), var(--_bw) calc(50% - var(--_nl)),
+    var(--_bw) calc(50% - var(--_nr)), var(--_bw) calc(50% - var(--_nr)),
+    var(--_rl) var(--_rl), var(--_rl) var(--_rl),
+    var(--_rr) var(--_rr), var(--_rr) var(--_rr),
+    51% 100%, 51% 100%;
+}
+
+/* Join a side to its neighbour: square corners, no punch. */
+@utility ticket-join-l {
+  --ticket-radius-l: 0px;
+  --ticket-notch-l: 0px;
+}
+@utility ticket-join-r {
+  --ticket-radius-r: 0px;
+  --ticket-notch-r: 0px;
+}
+
+/* Side edge styles: dashed (a perforation between segments) or none (the neighbour draws it). */
+@utility ticket-dashed-l {
+  --ticket-edge-l: repeating-linear-gradient(var(--_line) 0 var(--ticket-dash, 3px), transparent 0 calc(var(--ticket-dash, 3px) + var(--ticket-gap, 2px)));
+}
+@utility ticket-dashed-r {
+  --ticket-edge-r: repeating-linear-gradient(var(--_line) 0 var(--ticket-dash, 3px), transparent 0 calc(var(--ticket-dash, 3px) + var(--ticket-gap, 2px)));
+}
+@utility ticket-open-l {
+  --ticket-edge-l: none;
+}
+@utility ticket-open-r {
+  --ticket-edge-r: none;
+}
+
 body {
   background: var(--color-surface-175);
   color: var(--color-surface-500);
