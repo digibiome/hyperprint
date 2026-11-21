@@ -7,7 +7,7 @@ export default function Header() {
     <header className="sticky top-0 z-40 bg-linear-to-b from-surface-175 from-50% to-surface-175/0">
       <nav className="mx-auto grid max-w-screen-xl grid-cols-[1fr_auto_1fr] items-end px-6 py-10">
         <Callout
-          href="/login"
+          href="/account/login"
           prefetch={false}
           aria-label="Login"
           className="justify-self-start [--edge:#372005] [--tile:#f09700]"
@@ -21,7 +21,7 @@ export default function Header() {
           <Image src="/hero/logo.svg" alt="" preload width={152} height={32} className="h-9 w-auto md:h-8" />
         </Link>
         <Callout
-          href="/bag"
+          href="/order/bag"
           prefetch={false}
           aria-label="Bag"
           className="justify-self-end [--edge:#2d4650] [--tile:#83d2d3]"

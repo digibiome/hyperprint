@@ -1,8 +1,9 @@
 import Image from "next/image";
-import Link from "next/link";
 import { cn } from "@/lib/cn";
-import { LAYOUTS, PRODUCTS } from "./constants";
+import { PRODUCTS } from "@/lib/products";
+import { LAYOUTS } from "./constants";
 import Cube, { CELL_H, CELL_W } from "./cube";
+import ProductLink from "./product-link";
 
 /*
  * Honeycomb menu.
@@ -65,7 +66,7 @@ export default function Honeycomb() {
               i < 2 && "[--floor:#fdfeff]",
             )}
           >
-            <Link
+            <ProductLink
               href={`/products/${product.slug}`}
               prefetch={false}
               className="group absolute inset-0 text-[#1e201f] outline-none"
@@ -98,7 +99,7 @@ export default function Honeycomb() {
                   "group-focus-visible:translate-y-[calc(var(--cell)*-0.035)]",
                 )}
               />
-            </Link>
+            </ProductLink>
           </li>
         ))}
       </ul>
