@@ -1,5 +1,4 @@
 import { notFound } from "next/navigation";
-import Product from "@/components/product";
 import { getProduct, PRODUCTS } from "@/lib/products";
 
 /**
@@ -16,8 +15,9 @@ export default async function ProductPage({ params }: PageProps<"/products/[prod
   if (!product) notFound();
 
   return (
-    <main className="grid">
-      <Product product={product} />
+    <main className="grid gap-4 p-6">
+      <h1 className="text-2xl font-bold">{product.label.replace("\n", " ")}</h1>
+      {/* TODO: product details + quote */}
     </main>
   );
 }
