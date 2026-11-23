@@ -1,5 +1,5 @@
 @import "tailwindcss";
-@plugin "./_components/hero/honeycomb/plugin.ts";
+@plugin "./(home)/_components/hero/honeycomb/plugin.ts";
 
 /* Direct children at zero specificity: the parent sets defaults that a child's own classes override. */
 @custom-variant children (:where(& > *));
