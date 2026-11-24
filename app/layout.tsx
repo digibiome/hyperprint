@@ -17,7 +17,7 @@ export const metadata: Metadata = {
 /**
  * `modal` and `product` are parallel-route slots (app/@modal, app/@product).
  * They're empty unless a soft navigation is intercepted:
- *   /account/login, /order/bag → @modal renders them in a dialog over the current page
+ *   /account, /account/login, /order/bag → @modal renders them in a dialog over the current page
  *   /products/[product] → @product renders it as a section under the current page
  * A refresh or shared link skips interception and renders the full page instead.
  */
