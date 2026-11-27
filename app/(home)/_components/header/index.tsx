@@ -7,15 +7,15 @@ export default function Header() {
     <header className="sticky top-0 z-40 bg-linear-to-b from-surface-175 from-50% to-surface-175/0">
       <nav className="mx-auto grid max-w-screen-xl grid-cols-[1fr_auto_1fr] items-end px-6 py-10">
         <Callout
-          href="/account/login"
+          href="/account"
           prefetch={false}
-          aria-label="Login"
+          aria-label="Account"
           className="justify-self-start [--edge:#372005] [--tile:#f09700]"
         >
           <Callout.Tile>
             <Image src="/hero/icon-login.svg" alt="" width={28} height={28} className="self-end max-md:size-8" />
           </Callout.Tile>
-          <Callout.Label>Login</Callout.Label>
+          <Callout.Label>Account</Callout.Label>
         </Callout>
         <Link href="/" aria-label="Hyperprint home" className="self-center">
           <Image src="/hero/logo.svg" alt="" preload width={152} height={32} className="h-9 w-auto md:h-8" />
